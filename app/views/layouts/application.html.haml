@@ -1,0 +1,14 @@
+!!!
+%html.no-js{lang: "en"}
+  %head
+    %meta{charset: "utf-8"}/
+    %title= content_for?(:title) ? yield(:title) : "DailyBurn"
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "application"
+  %body
+    .container
+      = render partial: 'layouts/navbar'
+      .content
+        .row
+          = yield
+      = render partial: 'layouts/footer'

@@ -1,0 +1,30 @@
+= render 'layouts/main_panel'
+
+%table.table-new
+  %tr
+    %th Minimum Heart Rate
+    %th Maximum Heart Rate
+    %th Average Heart Rate
+    %th Username
+    %th Heart Rate Zone 1
+    %th Heart Rate Zone 2
+    %th Heart Rate Zone 3
+    %th Heart Rate Zone 4
+
+  - @sessions.each do |session|
+    %tr
+      %td= session.min_bpm
+      %td= session.max_bpm
+      %td= session.average_bpm
+      %td= session.username
+      %td= convert_seconds_to_time(session.zone1_duration)
+      %td= convert_seconds_to_time(session.zone2_duration)
+      %td= convert_seconds_to_time(session.zone3_duration)
+      %td= convert_seconds_to_time(session.zone4_duration)
+      %td
+        = link_to 'Visualize', session, class: 'small button success radius', 'data-heading' => "#{session.username} - Session #{session.id}", 'data-reveal-id' => 'visualize'
+
+= render 'visualize'
+
+= paginate @sessions
+      

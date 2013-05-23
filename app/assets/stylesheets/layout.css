@@ -1,0 +1,51 @@
+body{
+  background-image: url("light-texture.png");
+}
+
+#top-bar-container{
+  background-image: url("dark-texture.png");
+  height: 56px;
+}
+
+.reveal-modal-bg {
+  background: rgba(0, 0, 0, 0.80);
+}
+
+.top-bar{
+  background-image: url("dark-texture.png");
+  height: 55px;
+  margin-bottom: 10px;
+}
+
+.content{
+  margin-top: 20px;
+  min-height: 500px;
+}
+
+.overall_stats{
+  float: right;
+}
+
+.panel.callout {
+  padding: 7px;
+}
+
+.overall_stats p{
+  margin: 0;
+}
+
+.large-6 {
+  width: 100%;
+}
+
+
+footer{
+  margin-top: 40px;
+  background-image: url("dark-texture.png");
+  color: #fff;
+  padding: 20px 0 40px;
+  border-top: 2px solid #2a2a2a;
+  p{
+    margin-top: 10px;
+  }
+}
