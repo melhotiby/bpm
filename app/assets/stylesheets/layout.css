@@ -22,20 +22,12 @@ body{
   min-height: 500px;
 }
 
-.overall_stats{
-  float: right;
-}
-
 .panel.callout {
   padding: 7px;
 }
 
 .overall_stats p{
   margin: 0;
-}
-
-.large-6 {
-  width: 100%;
 }
 
 

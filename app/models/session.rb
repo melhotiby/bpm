@@ -11,8 +11,7 @@ class Session < ActiveRecord::Base
   delegate :max_bpm, to: :calculation, allow_nil: true
   has_many :hrm_data_points, foreign_key: "session_id", dependent: :destroy
   has_one :calculation
-  #default_scope :order => 'created_at DESC'
-  default_scope :order => 'id ASC'
+  default_scope :order => 'created_at DESC'
 
   after_save :calculate
 

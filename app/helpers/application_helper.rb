@@ -28,4 +28,18 @@ module ApplicationHelper
     Calculation.average(:average_bpm).to_i
   end
 
+  def overall_percentages
+    zone1 = Calculation.sum(:zone1_duration)
+    zone2 = Calculation.sum(:zone2_duration)
+    zone3 = Calculation.sum(:zone3_duration)
+    zone4 = Calculation.sum(:zone4_duration)
+    total_count = zone1 + zone2 + zone3 + zone4
+    content_tag :p do
+      content_tag(:p, "Zone1 Overall Percentage " + number_to_percentage((zone1.to_f/total_count * 100), :precision => 0)) + 
+      content_tag(:p, "Zone2 Overall Percentage " + number_to_percentage((zone2.to_f/total_count * 100), :precision => 0)) + 
+      content_tag(:p, "Zone3 Overall Percentage " + number_to_percentage((zone3.to_f/total_count * 100), :precision => 0)) + 
+      content_tag(:p, "Zone4 Overall Percentage " + number_to_percentage((zone4.to_f/total_count * 100), :precision => 0))
+    end
+  end
+
 end
