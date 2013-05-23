@@ -11,7 +11,7 @@ set :keep_releases, 3
 set :ssh_options, {:forward_agent => true}
 
 set :scm, :git
-set :repository,  "git@github.com:railsdevmatt/social_network.git"
+set :repository,  "git@github.com:railsdevmatt/bpm.git"
 set :git_shallow_clone, 1
 set :branch, "master"
 set :use_sudo, true
