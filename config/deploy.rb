@@ -14,10 +14,11 @@ set :scm, :git
 set :repository,  "git@github.com:railsdevmatt/bpm.git"
 set :git_shallow_clone, 1
 set :branch, "master"
-set :use_sudo, true
+set :use_sudo, false
 
 set :user, "deploy"
-ssh_options[:forward_agent] = true
+set :ssh_options, {:forward_agent => true}
+
 default_run_options[:pty] = true
 
 task :production do
